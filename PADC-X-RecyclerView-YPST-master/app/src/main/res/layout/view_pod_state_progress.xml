@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.viewpods.StateProgressViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDesc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CircleProgressbarDescriptionStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvCircle1"
+        tools:text="Survey"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDesc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CircleProgressbarDescriptionStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        tools:text="Splicing"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDesc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CircleProgressbarDescriptionStyle"
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        app:layout_constraintTop_toBottomOf="@id/tvCircle1"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        tools:text="Cabling"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDesc4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CircleProgressbarDescriptionStyle"
+        app:layout_constraintTop_toTopOf="@id/tvDesc2"
+        app:layout_constraintEnd_toEndOf="@id/tvCircle4"
+        tools:text="Activate"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="@id/tvCircle1"
+        app:layout_constraintBottom_toBottomOf="@id/tvCircle1"/>
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@id/guideline3"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/tvCircle1"
+        app:layout_constraintBottom_toBottomOf="@id/tvCircle1"/>
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/tvCircle1"
+        app:layout_constraintBottom_toBottomOf="@id/tvCircle1"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCircle1"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:text="1"
+        style="@style/CircleProgressbarTextStyle"
+        android:layout_marginTop="@dimen/margin_card_medium_2"
+        android:background="@drawable/shape_circle_accent"
+        app:layout_constraintTop_toBottomOf="@id/tvDesc1"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="@id/guideline1"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCircle2"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/shape_circle"
+        style="@style/CircleProgressbarTextStyle"
+        app:layout_constraintTop_toTopOf="@id/tvCircle1"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCircle3"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/shape_circle"
+        style="@style/CircleProgressbarTextStyle"
+        app:layout_constraintTop_toTopOf="@id/tvCircle1"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCircle4"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/shape_circle"
+        style="@style/CircleProgressbarTextStyle"
+        app:layout_constraintTop_toTopOf="@id/tvCircle1"
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.36" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+</com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.viewpods.StateProgressViewPod>

@@ -20,4 +20,16 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="CircleProgressbarTextStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/color_full_white</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+    </style>
+
+    <style name="CircleProgressbarDescriptionStyle">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+    </style>
+
+
 </resources>
