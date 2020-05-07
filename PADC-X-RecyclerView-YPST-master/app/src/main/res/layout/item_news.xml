@@ -63,28 +63,35 @@
             android:layout_height="1dp"
             android:layout_marginTop="@dimen/margin_medium" />
 
-        <FrameLayout
+        <!-- <FrameLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_margin="@dimen/margin_medium">
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="end|center"
+                 android:layout_marginEnd="@dimen/margin_medium"
+                 android:contentDescription="@string/like_button_support_iv"
+                 android:src="@drawable/ic_favorite_border_black_24dp" />
+
+             <Button
+                 style="@style/Widget.AppCompat.Button.Borderless"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="end"
+                 android:paddingEnd="@dimen/margin_xxlarge"
+                 android:text="@string/btn_like"
+                 android:textAllCaps="false" />
+         </FrameLayout>-->
+
+        <include
+            android:id="@+id/viewPodReaction"
+            layout="@layout/view_pod_reaction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_medium">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center"
-                android:layout_marginEnd="@dimen/margin_medium"
-                android:contentDescription="@string/like_button_support_iv"
-                android:src="@drawable/ic_favorite_border_black_24dp" />
-
-            <Button
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:paddingEnd="@dimen/margin_xxlarge"
-                android:text="@string/btn_like"
-                android:textAllCaps="false" />
-        </FrameLayout>
+            android:layout_margin="@dimen/margin_medium"/>
 
     </LinearLayout>
 
