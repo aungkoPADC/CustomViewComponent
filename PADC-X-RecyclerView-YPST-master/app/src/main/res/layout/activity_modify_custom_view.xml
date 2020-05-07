@@ -22,7 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_xxlarge"
-            android:inputType="number" />
+            android:inputType="number"
+            app:prefix="+959"
+            app:prefixColor="@color/colorPrimary"/>
 
     </LinearLayout>
 

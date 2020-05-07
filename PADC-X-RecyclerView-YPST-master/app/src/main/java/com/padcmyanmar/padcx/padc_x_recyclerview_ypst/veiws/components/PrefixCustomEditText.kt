@@ -18,6 +18,13 @@ class PrefixCustomEditText(context: Context, attrs: AttributeSet) :
 
     private val mPrefixRect = Rect()
 
+    init {
+        context.withStyledAttributes(attrs, R.styleable.PrefixCustomEditText) {
+            mPrefix = getString(R.styleable.PrefixCustomEditText_prefix) ?: mPrefix
+            mPrefixColor = getColor(R.styleable.PrefixCustomEditText_prefixColor, mPrefixColor)
+        }
+    }
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         // 1. place the prefix text
         paint.getTextBounds(mPrefix, 0, mPrefix.length, mPrefixRect)
