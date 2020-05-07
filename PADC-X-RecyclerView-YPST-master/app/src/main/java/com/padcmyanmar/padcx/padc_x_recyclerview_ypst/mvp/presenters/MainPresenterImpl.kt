@@ -10,27 +10,20 @@ class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
 
     private val mNewsModel = NewsModelImpl
 
-    override fun onTapNewsItem(newsId: Int) {
-        mView?.navigateToNewsDetails(newsId)
+    override fun onUiReady(lifeCycleOwner: LifecycleOwner) {
+        loadAllNewsFromAPI()
+        requestAllNews(lifeCycleOwner)
     }
 
     override fun onSwipeRefresh(lifecycleOwner: LifecycleOwner) {
         requestAllNews(lifecycleOwner)
     }
 
-    override fun onUiReady(lifeCycleOwner: LifecycleOwner) {
-        requestAllNews(lifeCycleOwner)
-    }
-
-    private fun requestAllNews(lifeCycleOwner: LifecycleOwner) {
-        mView?.enableSwipeRefresh()
-        mNewsModel.getAllNews(onError = {
-            mView?.disableSwipeRefresh()
-            mView?.displayEmptyView()
-        }).observe(lifeCycleOwner, Observer {
-            mView?.disableSwipeRefresh()
-            if (it.isEmpty()) mView?.displayEmptyView() else mView?.displayNewsList(it)
-        })
+    /**
+     * NewsItemDelegate callback method
+     */
+    override fun onTapNewsItem(newsId: Int) {
+        mView?.navigateToNewsDetails(newsId)
     }
 
     /**
@@ -52,5 +45,30 @@ class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
      */
     override fun onTapComment() {
         Log.d("TAG", "onTapComment")
+    }
+
+    /**
+     * EmptyViewPod.Delegate callback method
+     */
+    override fun onTapTryAgain() {
+        loadAllNewsFromAPI()
+    }
+
+    private fun requestAllNews(lifeCycleOwner: LifecycleOwner) {
+        mView?.enableSwipeRefresh()
+        mNewsModel.getAllNews(onError = {
+            mView?.disableSwipeRefresh()
+            mView?.displayEmptyView()
+        }).observe(lifeCycleOwner, Observer {
+            mView?.disableSwipeRefresh()
+            if (it.isEmpty()) mView?.displayEmptyView() else mView?.displayNewsList(it)
+        })
+    }
+
+    private fun loadAllNewsFromAPI() {
+        mNewsModel.getAllNewsFromApiAndSaveToDatabase(
+            onSuccess = {},
+            onError = {}
+        )
     }
 }

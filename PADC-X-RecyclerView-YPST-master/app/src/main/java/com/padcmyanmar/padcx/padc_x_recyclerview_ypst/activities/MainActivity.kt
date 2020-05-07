@@ -64,6 +64,7 @@ class MainActivity : BaseActivity(), MainView {
     private fun setUpViewPod() {
         mViewPodEmpty = vpEmpty as EmptyViewPod
         mViewPodEmpty.setEmptyData(EM_NO_NEWS_AVAILABLE, EMPTY_IMAGE_URL)
+        mViewPodEmpty.setDelegate(mPresenter)
     }
 
     private fun setUpSwipeRefresh() {

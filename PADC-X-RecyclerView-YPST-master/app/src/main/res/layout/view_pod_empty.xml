@@ -5,9 +5,10 @@
 
     <ImageView
         android:id="@+id/ivEmptyImage"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/empty"/>
 
     <org.mmtextview.components.MMTextView
@@ -17,5 +18,14 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <org.mmtextview.components.MMButton
+        android:id="@+id/btnTryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Try Again"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/tvEmpty"
+        android:layout_marginTop="@dimen/margin_medium"/>
 
 </com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.viewpods.EmptyViewPod>
