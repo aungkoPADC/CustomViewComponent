@@ -15,7 +15,8 @@
             android:layout_height="200dp"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/news_sample"/>
+            app:cornerRadius="16dp"
+            app:srcCompat="@drawable/news_sample" />
 
     </LinearLayout>
 
