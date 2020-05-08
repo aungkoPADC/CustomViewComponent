@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_purple"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.EmotionalFaceView
@@ -11,5 +12,29 @@
         android:layout_centerInParent="true"
         android:layout_margin="@dimen/margin_large"
         />
+
+    <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.EmotionalFaceView
+        android:id="@+id/happyButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/margin_medium"
+        app:faceColor="@android:color/holo_red_light"
+        app:borderColor="@android:color/white"
+        app:eyesColor="@android:color/white"
+        app:mouthColor="@android:color/white"
+        app:state="happy" />
+
+    <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.EmotionalFaceView
+        android:id="@+id/sadButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_alignParentEnd="true"
+        app:faceColor="@android:color/darker_gray"
+        app:borderColor="@android:color/black"
+        app:eyesColor="@android:color/black"
+        app:mouthColor="@android:color/black"
+        app:state="sad" />
 
 </RelativeLayout>

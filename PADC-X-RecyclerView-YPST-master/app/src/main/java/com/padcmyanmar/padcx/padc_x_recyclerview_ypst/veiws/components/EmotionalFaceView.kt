@@ -4,26 +4,57 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.content.withStyledAttributes
+import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.R
 
 class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     // Paint object for coloring and styling
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
+    // 2
     // Some colors for the face background, eyes and mouth.
-    private var faceColor = Color.YELLOW
-    private var eyesColor = Color.BLACK
-    private var mouthColor = Color.BLACK
-    private var borderColor = Color.BLACK
+    private var faceColor = DEFAULT_FACE_COLOR
+    private var eyesColor = DEFAULT_EYES_COLOR
+    private var mouthColor = DEFAULT_MOUTH_COLOR
+    private var borderColor = DEFAULT_BORDER_COLOR
 
     // Face border width in pixels
-    private var borderWidth = 4.0f
+    private var borderWidth = DEFAULT_BORDER_WIDTH
 
     // View size in pixels
-    private var size = 320
+    private var size = 0
 
     // To draw mouth on a path
     private val mouthPath = Path()
+
+    // 3
+    var happinessState = HAPPY
+        set(state) {
+            field = state
+            // 4
+            invalidate()
+        }
+
+    // 5
+    init {
+        paint.isAntiAlias = true
+        setupAttributes(attrs)
+    }
+
+    private fun setupAttributes(attrs: AttributeSet?) {
+
+        // 6
+        // get custom attribute values from xml
+        context.withStyledAttributes(attrs, R.styleable.EmotionalFaceView) {
+            happinessState = getString(R.styleable.EmotionalFaceView_state)?.toLongOrNull() ?: HAPPY
+            faceColor = getColor(R.styleable.EmotionalFaceView_faceColor, DEFAULT_FACE_COLOR)
+            eyesColor = getColor(R.styleable.EmotionalFaceView_eyesColor, DEFAULT_EYES_COLOR)
+            mouthColor = getColor(R.styleable.EmotionalFaceView_mouthColor, DEFAULT_MOUTH_COLOR)
+            borderColor = getColor(R.styleable.EmotionalFaceView_borderColor, DEFAULT_BORDER_COLOR)
+            borderWidth = getDimension(R.styleable.EmotionalFaceView_borderWidth, DEFAULT_BORDER_WIDTH)
+        }
+    }
 
     override fun onDraw(canvas: Canvas) {
         // call the super method to keep any drawing from the parent side.
@@ -113,5 +144,28 @@ class EmotionalFaceView(context: Context, attrs: AttributeSet) : View(context, a
 
         // 5
         canvas.drawPath(mouthPath, paint)
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+
+        // 1 get minimum value
+        size = measuredWidth.coerceAtMost(measuredHeight)
+
+        // 2 override width and height
+        setMeasuredDimension(size, size)
+    }
+
+    // 1
+    companion object {
+
+        private const val DEFAULT_FACE_COLOR = Color.YELLOW
+        private const val DEFAULT_EYES_COLOR = Color.BLACK
+        private const val DEFAULT_MOUTH_COLOR = Color.BLACK
+        private const val DEFAULT_BORDER_COLOR = Color.BLACK
+        private const val DEFAULT_BORDER_WIDTH = 4.0f
+
+        const val HAPPY = 0L
+        const val SAD = 1L
     }
 }
