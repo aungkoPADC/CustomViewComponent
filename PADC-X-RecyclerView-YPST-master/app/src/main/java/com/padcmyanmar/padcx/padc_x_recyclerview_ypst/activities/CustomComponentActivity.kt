@@ -14,14 +14,16 @@ class CustomComponentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_custom_component)
 
-        // 1
         happyButton.setOnClickListener {
             emotionalFaceView.happinessState = EmotionalFaceView.HAPPY
         }
 
-        // 2
         sadButton.setOnClickListener {
             emotionalFaceView.happinessState = EmotionalFaceView.SAD
+        }
+
+        btnNavigate.setOnClickListener {
+            startActivity(FanControlActivity.newIntent(this))
         }
     }
 
