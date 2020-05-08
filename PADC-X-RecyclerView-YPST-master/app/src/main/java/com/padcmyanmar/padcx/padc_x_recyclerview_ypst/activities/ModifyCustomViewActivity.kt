@@ -47,6 +47,10 @@ class ModifyCustomViewActivity : AppCompatActivity() {
             mViewPodStateProgress.completeAllSteps()
         }
 
+        btnNavigate.setOnClickListener {
+            startActivity(CustomComponentActivity.newIntent(this))
+        }
+
     }
 
 

@@ -28,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.ModifyCustomViewActivity" />
+        <activity android:name=".activities.CustomComponentActivity" />
     </application>
 
 </manifest>
