@@ -14,4 +14,21 @@ interface NewsApi {
     @POST(GET_NEWS)
     fun getAllNews(@Field(PARAM_ACCESS_TOKEN) accessToken : String)
             : Observable<GetAllNewsResponse>
+
+    /*
+
+    val BASE_URL = "https://api.themoviedb.org/3"
+
+    val LATEST_MOVIE = "latest_movie"
+    val MOVIE_DETAIL = "movie_detail"
+
+    val PARAM_API_KEY = "api_key"
+
+    @GET(LATEST_MOVIE)
+    fun getLatestMoveList(@Query(PARAM_API_KEY) apiKey : String) : Observable<MovieListResponse>
+
+    @GET("$MOVIE_DETAIL/{MOVIE_ID}")
+    fun getMovieDetail(@Query(PARAM_API_KEY) apiKey : String,@Path("MOVIE_ID") movieID:Int) : Observable<MovieVO>
+
+ */
 }
